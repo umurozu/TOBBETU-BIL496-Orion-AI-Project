@@ -28,7 +28,7 @@ These documents cover the complete development process of **Invisio**.
 
 | Document | Description |
 |---|---|
-| [Final Report](./docs/OrionAi_YAP496_Final_Report.pdf) | Main and final academic report of the project. |
+| [Final Report](https://drive.google.com/file/d/1-VJFXfT0WvN6mI7gGpWInJLZannieCEl/view?usp=drive_link) | Main and final academic report of the project. |
 | [PKE Report](./docs/Invisio_PKE_Raporu_YAP496.pdf) | Constraints, standards compliance, and impact analysis. |
 | [Project Proposal](./docs/OrionAI_Project_Proposal.pdf) | Initial project scope and objectives. |
 | [Project Specifications Report](./docs/OrionAI_Project_Specifications_Report.pdf) | System description, constraints, and requirements. |
