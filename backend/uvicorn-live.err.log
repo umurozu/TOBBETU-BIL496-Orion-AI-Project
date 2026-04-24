@@ -1,0 +1,10 @@
+INFO:     Started server process [26376]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+Loading weights:   0%|          | 0/200 [00:00<?, ?it/s]Loading weights: 100%|##########| 200/200 [00:00<00:00, 2446.70it/s]
+forrtl: error (200): program aborting due to window-CLOSE event
+Image              PC                Routine            Line        Source             
+KERNELBASE.dll     00007FFF22FCC203  Unknown               Unknown  Unknown
+KERNEL32.DLL       00007FFF25557374  Unknown               Unknown  Unknown
+ntdll.dll          00007FFF257FCC91  Unknown               Unknown  Unknown

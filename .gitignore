@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+venv/
+.env
+
+# ML modeller
+*.pt
+*.ckpt
+*.bin
+*.pth
+checkpoints/
+models/
+weights/
+
+# büyük şeyler
+*.zip
+*.rar

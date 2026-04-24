@@ -1,0 +1,37 @@
+2026-04-18 04:51:19,322 INFO sqlalchemy.engine.Engine select pg_catalog.version()
+2026-04-18 04:51:19,327 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-18 04:51:19,338 INFO sqlalchemy.engine.Engine select current_schema()
+2026-04-18 04:51:19,343 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-18 04:51:19,351 INFO sqlalchemy.engine.Engine show standard_conforming_strings
+2026-04-18 04:51:19,355 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-04-18 04:51:19,363 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-18 04:51:19,373 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-04-18 04:51:19,373 INFO sqlalchemy.engine.Engine [generated in 0.00063s] ('users', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-04-18 04:51:19,379 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-04-18 04:51:19,379 INFO sqlalchemy.engine.Engine [cached since 0.00574s ago] ('community_posts', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-04-18 04:51:19,380 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-04-18 04:51:19,380 INFO sqlalchemy.engine.Engine [cached since 0.006951s ago] ('community_likes', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-04-18 04:51:19,380 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-04-18 04:51:19,381 INFO sqlalchemy.engine.Engine [cached since 0.008227s ago] ('community_comments', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-04-18 04:51:19,382 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     127.0.0.1:54097 - "GET /health HTTP/1.1" 200 OK
+2026-04-18 04:51:24,262 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-04-18 04:51:24,273 INFO sqlalchemy.engine.Engine SELECT community_posts.id, community_posts.owner_id, community_posts.image_path, community_posts.ai_operation, community_posts.caption, community_posts.likes, community_posts.views, community_posts.shared_at, community_posts.updated_at, users_1.id AS id_1, users_1.email, users_1.username, users_1.hashed_pw, users_1.is_active, users_1.created_at, users_1.updated_at AS updated_at_1, users_1.consent_at 
+FROM community_posts LEFT OUTER JOIN users AS users_1 ON users_1.id = community_posts.owner_id ORDER BY community_posts.id DESC 
+ LIMIT $1::INTEGER
+2026-04-18 04:51:24,274 INFO sqlalchemy.engine.Engine [generated in 0.00128s] (1,)
+2026-04-18 04:51:24,290 INFO sqlalchemy.engine.Engine SELECT community_comments.post_id, count(community_comments.id) AS count_1 
+FROM community_comments 
+WHERE community_comments.post_id IN ($1::INTEGER) GROUP BY community_comments.post_id
+2026-04-18 04:51:24,291 INFO sqlalchemy.engine.Engine [generated in 0.00089s] (1,)
+2026-04-18 04:51:24,306 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     127.0.0.1:54098 - "GET /community/feed?limit=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54101 - "POST /upload HTTP/1.1" 200 OK
