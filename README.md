@@ -22,6 +22,23 @@ The platform is designed around the following principles:
 
 ---
 
+## 📚 Project Documentation
+
+These documents cover the complete development process of **Invisio**.
+
+| Document | Description |
+|---|---|
+| [Final Report](./docs/OrionAi_YAP496_Final_Report.pdf) | Main and final academic report of the project. |
+| [PKE Report](./docs/Invisio_PKE_Raporu_YAP496.pdf) | Constraints, standards compliance, and impact analysis. |
+| [Project Proposal](./docs/OrionAI_Project_Proposal.pdf) | Initial project scope and objectives. |
+| [Project Specifications Report](./docs/OrionAI_Project_Specifications_Report.pdf) | System description, constraints, and requirements. |
+| [Analysis Report](./docs/OrionAI_Analysis_Report.pdf) | Requirement analysis and system modeling. |
+| [High-Level Design Report](./docs/OrionAI_High-Level_Design_Report.pdf) | Overall architecture and subsystem design. |
+| [Low-Level Design Report](./docs/OrionAI_Low-Level_Design_Report.pdf) | Detailed design of classes, interfaces, and components. |
+| [Test Plan Report](./docs/OrionAI_Test_Plan_Report.pdf) | Testing methodology, cases, and evaluation plan. |
+
+---
+
 ## ✨ Key Features
 
 ### 🪄 AI Object Removal
